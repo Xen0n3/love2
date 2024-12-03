@@ -333,7 +333,7 @@ def get_districts_keyboard(city):
     keyboard = InlineKeyboardMarkup()
     for district in cities[city]:
         keyboard.add(InlineKeyboardButton(text=district, callback_data=f"district_{district}"))
-    keyboard.add(InlineKeyboardButton(text="Назад", callback_data="back_to_cities"))
+    keyboard.add(InlineKeyboardButton(text="Назад⬅️", callback_data="back_to_cities"))
     return keyboard
 
 def get_goods_keyboard():
@@ -341,7 +341,7 @@ def get_goods_keyboard():
     keyboard = InlineKeyboardMarkup()
     for good in goods:
         keyboard.add(InlineKeyboardButton(text=good, callback_data=f"g_{good}"))
-    keyboard.add(InlineKeyboardButton(text="Назад", callback_data="back_to_districts"))
+    keyboard.add(InlineKeyboardButton(text="Назад⬅️", callback_data="back_to_districts"))
     return keyboard
 
 def get_payment_keyboard():
@@ -496,7 +496,7 @@ def process_payment(call):
 
     bot.send_message(
         chat_id,
-        f"Оплатите сумму *{amount_crypto} {payment_method.upper()}*, номер счета:\n```\n{address}\n```\n\n❗*Внимательно проверьте сумму и сеть, в которой оплачиваете*❗\n\nПосле оплаты отправьте *хэш транзакции* в этот чат для проверки.\n\nДля перезапуска нажмите /start",
+        f"Оплатите сумму *{amount_crypto} {payment_method.upper()}*, номер счета:\n```\n{address}\n```\n\n❗*Внимательно проверяйте сумму и сеть, в которой оплачиваете*❗\n\nПосле оплаты отправьте *хэш транзакции* в этот чат для проверки.\n\nДля перезапуска нажмите /start",
         parse_mode="Markdown"
     )
 
